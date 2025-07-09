@@ -1,0 +1,10 @@
+#*
+.#*
+*~
+*.o
+
+dmenu*/dmenu
+dwm*/dwm
+slock*/slock
+slstatus*/slstatus
+st*/st
