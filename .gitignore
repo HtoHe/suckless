@@ -2,6 +2,8 @@
 .#*
 *~
 *.o
+*.jpeg
+*.png
 
 dmenu*/dmenu
 dwm*/dwm

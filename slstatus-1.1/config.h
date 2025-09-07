@@ -64,7 +64,11 @@ static const char unknown_str[] = "n/a";
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
+
 static const struct arg args[] = {
-	/* function format          argument */
-	{ datetime, "%s",           "%F %T" },
+        /* function format          argument */
+        { run_command,    "WiFi: %s ",    "nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d':' -f2 || echo 'N/A'" },
+        { run_command,    "(%s) | ",    "nmcli -f IN-USE,SIGNAL dev wifi | grep '^\\*' | awk '{print $2\"%\"}' || echo 'N/A'" },  
+        { run_command,    "%s",           "[ -d /sys/class/power_supply/BAT0 ] && echo \"Bat: $(cat /sys/class/power_supply/BAT0/capacity)% ($(cat /sys/class/power_supply/BAT0/status)) | \" || echo \"n/a | \"" },
+        { datetime,       "%s",           "%F %T" },
 };
