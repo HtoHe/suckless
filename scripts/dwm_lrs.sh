@@ -1,7 +1,7 @@
 #!/bin/sh
-choice=$(echo -e "logout\nreboot\nshutdown" | dmenu -p "System:")
+choice=$(printf "Logout\nReboot\nShutdown" | dmenu -p "System:")
 case "$choice" in
-    logout) loginctl terminate-session "$XDG_SESSION_ID" ;;
-    reboot) systemctl reboot ;;
-    shutdown) systemctl poweroff ;;
+    Logout) loginctl terminate-session "$XDG_SESSION_ID" ;;
+    Reboot) systemctl reboot ;;
+    Shutdown) systemctl poweroff ;;
 esac

@@ -1,0 +1,7 @@
+slstatus &
+# xautolock -time 10 -locker slock &
+xset s 600 600
+xss-lock slock &
+# xmodmap ~/.Xmodmap &
+feh --bg-scale ~/programs/suckless/dwm-6.5/tagomago.png &
+exec dwm
